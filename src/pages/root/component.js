@@ -5,7 +5,8 @@ import { TeacherPage } from '../teacher-page/components/Login';
 import { StudentPage } from '../student-page';
 import { TeacherLandingPage } from '../teacher-page/components/Landing';
 
-import "@blueprintjs/core/lib/css/blueprint.css";
+import '@blueprintjs/core/lib/css/blueprint.css';
+import '@blueprintjs/icons/lib/css/blueprint-icons.css';
 
 export class Root extends React.Component {
   render() {

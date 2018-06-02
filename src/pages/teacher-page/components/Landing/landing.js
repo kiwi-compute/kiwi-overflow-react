@@ -13,6 +13,8 @@ import {
   Popover
 } from "@blueprintjs/core";
 
+import { Select } from "@blueprintjs/select";
+
 import "./landing.css";
 
 // TODO: Remove dummy questions
@@ -31,39 +33,57 @@ export class TeacherLandingPage extends React.Component {
     super(props);
   }
 
-  render() {
-    const Menu = (
-      <Menu>
-        <MenuItem
-          icon="new-text-box"
-          onClick={this.handleClick}
-          text="New text box"
-        />
-        <MenuItem
-          icon="new-object"
-          onClick={this.handleClick}
-          text="New object"
-        />
-        <MenuItem icon="new-link" onClick={this.handleClick} text="New link" />
-        <MenuDivider />
-        <MenuItem text="Settings..." icon="cog" />
-      </Menu>
-    );
+  generateOptions = list => {
+    list.unshift("Select a question...");
+    const selections = list.map((el, i) => {
+      if (i === 0) {
+        return (
+          <option key="default" disabled selected hidden>
+            Select a question...
+          </option>
+        );
+      } else {
+        return <option key={i}>{el}</option>;
+      }
+    });
+    return <select className="teacher-landing-select">{selections}</select>;
+  };
 
+  generateMinutes = () => {
+    const numbers = [
+      <option key="default" disabled selected hidden>
+        Set timer...
+      </option>
+    ];
+    for (let i = 0; i < 5; i++) {
+      numbers.push(<option key={i}>{i + 1}</option>);
+    }
+    return <select className="teacher-landing-select">{numbers}</select>;
+  };
+
+  render() {
     return (
-      <div className="teacher-landing">
-        {/* TODO: Remove navbar b/c it needs to be dealt with using React router */}
-        <div className="teacher-landing-navbar">
-          <img
-            src="https://pbs.twimg.com/profile_images/618252716264026112/vqqChM0n.jpg"
-            width="50px"
-            height="50px"
-          />
-        </div>
+      <div className="teacher-landing-page">
         <div className="teacher-landing-content">
-          <Popover content={Menu} position={Position.RIGHT_TOP}>
-            <Button icon="share" text="Open in..." />
-          </Popover>
+          <div className="teacher-landing-select-container">
+            <div className="pt-select teacher-landing-question-select">
+              {this.generateOptions(DUMMY_QUESTIONS)}
+            </div>
+          </div>
+          <div className="teacher-landing-select-container">
+            <div className="pt-select teacher-landing-time-select">
+              {this.generateMinutes()}
+            </div>
+          </div>
+        </div>
+        <div className="teacher-landing-create-room-container">
+          <button
+            type="button"
+            className="pt-button pt-intent-success teacher-landing-create-room-button"
+          >
+            Create Room
+            <span className="pt-icon-standard pt-icon-arrow-right pt-align-right" />
+          </button>
         </div>
       </div>
     );
