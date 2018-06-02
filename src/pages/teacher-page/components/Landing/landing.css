@@ -1,4 +1,11 @@
-.classroom-card {
-  display: inline-block;
-  margin: 1em;
+.teacher-landing-navbar {
+  border: 1px solid blue;
+
+}
+.teacher-landing {
+}
+
+.teacher-landing-content {
+  border: 1px solid red;  
+  margin: 0 300px;  
 }

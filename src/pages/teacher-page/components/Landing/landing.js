@@ -1,7 +1,30 @@
-import React from 'react';
-import { Spinner, Button, Card, Elevation } from '@blueprintjs/core';
+import React from "react";
+import {
+  Menu,
+  Alignment,
+  Position,
+  Navbar,
+  NavbarGroup,
+  NavbarHeading,
+  NavbarDivider,
+  Button,
+  MenuItem,
+  MenuDivider,
+  Popover
+} from "@blueprintjs/core";
 
-import './landing.css';
+import "./landing.css";
+
+// TODO: Remove dummy questions
+const DUMMY_QUESTIONS = [
+  "Expressions",
+  "Conditionals",
+  "Loops",
+  "Linked Lists",
+  "Object-Oriented Programming",
+  "n-Queens Problem",
+  "Red/Black Trees"
+];
 
 export class TeacherLandingPage extends React.Component {
   constructor(props) {
@@ -9,24 +32,39 @@ export class TeacherLandingPage extends React.Component {
   }
 
   render() {
-    const teacherName = this.props.match.params.teacherID;
-    const teacherNameString = teacherName.charAt(0).toUpperCase() + teacherName.substring(1);
+    const Menu = (
+      <Menu>
+        <MenuItem
+          icon="new-text-box"
+          onClick={this.handleClick}
+          text="New text box"
+        />
+        <MenuItem
+          icon="new-object"
+          onClick={this.handleClick}
+          text="New object"
+        />
+        <MenuItem icon="new-link" onClick={this.handleClick} text="New link" />
+        <MenuDivider />
+        <MenuItem text="Settings..." icon="cog" />
+      </Menu>
+    );
 
     return (
       <div className="teacher-landing">
-        <h3>{ teacherNameString }'s Classrooms</h3>
-        <Card className="classroom-card" interactive={true} elevation={Elevation.TWO}>
-          <h5><a href="#">Python 101 SB02</a></h5>
-          <p>21 students</p>
-          <p>Learn python with ease!</p>
-          <Button>Join</Button>
-        </Card>
-        <Card className="classroom-card" interactive={true} elevation={Elevation.TWO}>
-          <h5><a href="#">Python 101 SB02</a></h5>
-          <p>21 students</p>
-          <p>Learn python with ease!</p>
-          <Button>Join</Button>
-        </Card>
+        {/* TODO: Remove navbar b/c it needs to be dealt with using React router */}
+        <div className="teacher-landing-navbar">
+          <img
+            src="https://pbs.twimg.com/profile_images/618252716264026112/vqqChM0n.jpg"
+            width="50px"
+            height="50px"
+          />
+        </div>
+        <div className="teacher-landing-content">
+          <Popover content={Menu} position={Position.RIGHT_TOP}>
+            <Button icon="share" text="Open in..." />
+          </Popover>
+        </div>
       </div>
     );
   }
