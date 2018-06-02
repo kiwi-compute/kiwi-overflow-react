@@ -1,11 +1,34 @@
-.teacher-landing-navbar {
-  border: 1px solid blue;
-
-}
-.teacher-landing {
-}
 
 .teacher-landing-content {
-  border: 1px solid red;  
-  margin: 0 300px;  
+  padding: 30px;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.teacher-landing-question-select {
+  display: block;
+}
+
+.teacher-landing-time-select {
+  display: block;
+}
+
+.teacher-landing-select {
+  width: 400px;
+}
+
+.teacher-landing-select option {
+  font-size: 1.1em;
+}
+
+.teacher-landing-select-container {
+  margin-bottom: 30px;
+}
+
+.teacher-landing-create-room-container {
+  position: fixed;
+  bottom: 20vh;
+  right: 20vw;
 }
