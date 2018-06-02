@@ -4,6 +4,7 @@ import firebase from 'firebase';
 import { config } from './config/firebase';
 import { Root } from './pages/root';
 
-firebase.initializeApp(config);
+const app = firebase.initializeApp(config);
+export const db = firebase.firestore(app);;
 
 ReactDOM.render(<Root />, document.getElementById('root'));

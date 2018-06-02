@@ -5,8 +5,6 @@ import { TeacherPage } from '../teacher-page';
 import { StudentPage } from '../student-page';
 import { TeacherLandingPage } from '../teacher-page/landing';
 
-import { generateRandomName } from '../../utils/randomNameGenerator';
-
 import "@blueprintjs/core/lib/css/blueprint.css";
 
 export class Root extends React.Component {
@@ -17,7 +15,7 @@ export class Root extends React.Component {
           <Switch>
             <Route exact path="/teacher" component={TeacherPage} />
             <Route exact path="/teacher/:teacherID" component={TeacherLandingPage} />
-            <Route exact path="/:roomID" component={StudentPage} />
+            <Route exact path="/:roomName" component={StudentPage} />
           </Switch>
         </BrowserRouter>
       </div>
