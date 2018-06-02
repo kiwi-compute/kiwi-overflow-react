@@ -1,19 +1,23 @@
 import * as React from 'react';
 import { InputGroup, ControlGroup, Button} from '@blueprintjs/core';
+import { NavbarComponent } from './navbar';
 
 import './login.css';
 
 export class TeacherPage extends React.Component {
   state = {
-    username: '',
-    password: '',
+    loginUsername: '',
+    loginPassword: '',
+    regUser: '',
+    regPassword: '',
   }
   render() {
     return (
       <div className="wrapper">
+        <NavbarComponent loginTeacher={this._loginTeacher} handleInputChange={this._handleInputChange} username={this.state.loginUsername} password={this.state.loginPassword} authenticated={false} />
         <div className="content">
           <h3 className="header">
-            Kiwi Teacher Login
+            Register New Teacher
           </h3>
           <ControlGroup vertical>
             <InputGroup
@@ -21,35 +25,29 @@ export class TeacherPage extends React.Component {
               value={this.state.username}
               placeholder="Username"
               type="text"
-              onChange={(e) => this._handleUserChange(e.target.value)}
+              onChange={(e) => this._handleInputChange(e.target.value, 'regUser')}
             />
             <InputGroup
               large
               value={this.state.password}
               placeholder="Password"
               type="password"
-              onChange={(e) => this._handlePasswordChange(e.target.value)}
+              onChange={(e) => this._handleInputChange(e.target.value, 'regPassword')}
             />
-            <Button onClick={() => this._loginTeacher()} type="submit">Login</Button>
-            </ControlGroup>
+            <Button onClick={() => this._loginTeacher('regUser')} type="submit">Register</Button>
+          </ControlGroup>
         </div>
       </div>
     );
   }
 
-  _handleUserChange = (val) => {
+  _handleInputChange = (val, state) => {
     this.setState({
-      username: val,
+      [state]: val,
     })
   }
 
-  _handlePasswordChange = (val) => {
-    this.setState({
-      password: val,
-    })
-  }
-
-  _loginTeacher = () => {
-    window.location = `teacher/${this.state.username}`;
+  _loginTeacher = (state) => {
+    window.location = `teacher/${this.state[state]}`;
   }
 }
