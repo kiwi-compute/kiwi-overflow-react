@@ -1,6 +1,10 @@
 import * as React from 'react';
 import { Navbar, NavbarGroup, Alignment, ControlGroup, InputGroup, Button } from '@blueprintjs/core';
+<<<<<<< HEAD
 import Avatar from '../Avatar/avatar';
+=======
+import { Avatar } from 'kiwi/pages/teacher-page/components/Avatar';
+>>>>>>> master
 
 import './navbar.css';
 
@@ -38,5 +42,8 @@ const NavbarComponent = (props) => {
     </Navbar>
   )
 }
+<<<<<<< HEAD
 
 export default NavbarComponent;
+=======
+>>>>>>> master

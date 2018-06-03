@@ -1,6 +1,10 @@
 import * as React from 'react';
 import { InputGroup, ControlGroup, Button} from '@blueprintjs/core';
+<<<<<<< HEAD
 import NavbarComponent from '../Navbar/navbar';
+=======
+import { NavbarComponent } from 'kiwi/pages/teacher-page/components/Navbar';
+>>>>>>> master
 
 import './login.css';
 
@@ -48,6 +52,10 @@ export class TeacherPage extends React.Component {
   }
 
   _loginTeacher = (state) => {
+<<<<<<< HEAD
     this.props.history.push(`${this.state[state]}`);
+=======
+    this.props.history.push(`teacher/${this.state[state]}`);
+>>>>>>> master
   }
 }

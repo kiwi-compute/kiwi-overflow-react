@@ -1,4 +1,4 @@
-import { db } from '..';
+import { db } from 'kiwi';
 
 export function getRoomByID(id) {
   return db.collection('rooms').doc(id).get().then((room) => {

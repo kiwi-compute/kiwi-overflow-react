@@ -2,9 +2,13 @@ import React from "react";
 import { Menu, MenuItem, MenuDivider, Icon, Popover, Position } from "@blueprintjs/core";
 import { withRouter } from 'react-router';
 
+<<<<<<< HEAD
 import "./avatar.css";
 
 class Avatar extends React.Component {
+=======
+export class AvatarComponent extends React.Component {
+>>>>>>> master
   state={
     displayMenu: false,
   }
@@ -37,4 +41,8 @@ const MenuContent = (props) => {
   )
 }
 
+<<<<<<< HEAD
 export default withRouter(Avatar);
+=======
+export const Avatar = withRouter(AvatarComponent);
+>>>>>>> master
