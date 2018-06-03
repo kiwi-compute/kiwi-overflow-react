@@ -2,8 +2,7 @@ import PropTypes from 'prop-types';
 import * as React from 'react';
 import { getTopAnswersForStep } from 'kiwi/api/get-answer';
 import { QuestionPropType } from 'kiwi/common/models/question';
-import { Card, Icon, Text } from '@blueprintjs/core';
-import { IconNames } from "@blueprintjs/icons";
+import { AnswerList } from '../answer-list';
 
 
 export class ReviewStep extends React.Component {
@@ -36,19 +35,11 @@ export class ReviewStep extends React.Component {
     }
 
     return (
-      <Card className="kw-flex kw-flex-column">
-        {this.state.answers.map(({ id, text }, index) => {
-          // const isLast = this.state.answers.length - 1 === index;
-
-          return (
-            <Card key={id}>
-              <Text>{text}</Text>
-              <Icon icon={IconNames.CARET_UP} iconSize={Icon.SIZE_LARGE} />
-            </Card>
-          );
-        })}
-      </Card>
-    )
+      <div className="kw-flex kw-flex-column kw-full-width kw-align-items-center">
+        <div className="kw-mg-y-1">Top answers this Round</div>
+        <AnswerList answers={this.state.answers} isVotingMode={false} />
+      </div>
+    );
   }
 
   _retrieveAnswers() {

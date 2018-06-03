@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
 import * as React from 'react';
-import { getAnswersForStep } from 'kiwi/api/get-answer';
+import { subscribeToAnswers } from 'kiwi/api/subscribe-to-answers';
 import { QuestionPropType } from 'kiwi/common/models/question';
-import { Card, Icon, Text } from '@blueprintjs/core';
-import { IconNames } from "@blueprintjs/icons";
+import { AnswerList } from 'kiwi/common/components/question-step/components/answer-list';
 
 export class VoteStep extends React.Component {
   static propTypes = {
@@ -35,32 +34,22 @@ export class VoteStep extends React.Component {
     }
 
     return (
-      <Card className="kw-flex kw-flex-column">
-        {this.state.answers.map(({ id, text }, index) => {
-          const isLast = this.state.answers.length - 1 === index;
-
-          return (
-            <Card className={`kw-flex kw-justify-content-between ${isLast ? '' : 'kw-mg-b-05'}`} key={id}>
-              <Text>{text}</Text>
-              <Icon icon={IconNames.CARET_UP} iconSize={Icon.SIZE_LARGE} />
-            </Card>
-          );
-        })}
-      </Card>
+      <div className="kw-flex kw-flex-column kw-full-width kw-align-items-center">
+        <div className="kw-mg-y-1">Vote on your favorite answer!</div>
+        <AnswerList answers={this.state.answers} isVotingMode={true} />
+      </div>
     )
   }
 
   _retrieveAnswers() {
     const { question, roomID, step } = this.props;
 
-    getAnswersForStep(roomID, question.id, step).then((answers) => {
+    subscribeToAnswers(roomID, question.id, step, (answers) => {
       this.setState({
         answers: answers.filter(({ studentID }) => studentID !== this.props.studentID),
         error: null,
         loading: false
       });
-    }).catch((error) => {
-      this.setState({ answers: null, error: null, loading: false });
     });
   }
 }

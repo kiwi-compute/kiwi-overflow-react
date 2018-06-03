@@ -1,0 +1,4 @@
+.answer-list {
+  max-height: 400px;
+  overflow: scroll;
+}

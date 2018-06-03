@@ -14,11 +14,12 @@ export class QuestionStep extends React.Component {
     questionID: PropTypes.string.isRequired,
     roomID: PropTypes.string.isRequired,
     step: PropTypes.number.isRequired,
+    subStep: PropTypes.number,
     studentID: PropTypes.string.isRequired,
   }
 
   state = {
-    subStep: SubStep.Answer,
+    subStep: this.props.subStep || SubStep.Answer,
     error: null,
     loading: true,
     question: null,
