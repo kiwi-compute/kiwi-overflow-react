@@ -1,25 +1,10 @@
 import React from "react";
-import {
-  Menu,
-  Alignment,
-  Position,
-  Navbar,
-  NavbarGroup,
-  NavbarHeading,
-  NavbarDivider,
-  Button,
-  MenuItem,
-  MenuDivider,
-  Popover
-} from "@blueprintjs/core";
+
 import NavbarComponent from '../Navbar/navbar';
 
-import { Select } from "@blueprintjs/select";
 import { generateRandomName } from '../../../../utils/randomNameGenerator';
 import { createRoom } from '../../../../api/create-room';
 import { fetchQuestions } from '../../../../api/fetch-questions';
-
-import { Timer } from '../../../../common/components/timer';
 
 import "./landing.css";
 
@@ -111,15 +96,15 @@ export class TeacherLandingPage extends React.Component {
   }
 
   _createRoom = () => {
-    const room = generateRandomName().replace(/\s/g, '');
+    const name = generateRandomName().replace(/\s/g, '');
     const roomObj = {
-      room,
+      name,
       questionID: this.state.selectedId,
       step: 0,
       timer: this.state.timer,
     }
     createRoom(roomObj).then(() => {
-      this.props.history.push(`${this.props.match.params.teacherID}/${room}`)
+      this.props.history.push(`${this.props.match.params.teacherID}/${name}`)
     })
   }
 }

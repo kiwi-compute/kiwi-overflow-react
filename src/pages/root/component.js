@@ -21,7 +21,7 @@ export class Root extends React.Component {
             <Route exact path="/findroom" component={FindRoom}/>
             <Route exact path="/teacher" component={TeacherPage} />
             <Route exact path="/teacher/:teacherID" component={TeacherLandingPage} />
-            <Route exact path="/teacher/:teacherID/:roomID" component={TeacherRoom} />
+            <Route exact path="/teacher/:teacherID/:roomName" component={TeacherRoom} />
             <Route exact path="/:roomName" component={StudentPage} />
           </Switch>
         </BrowserRouter>
