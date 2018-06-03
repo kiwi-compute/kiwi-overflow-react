@@ -7,7 +7,7 @@ import { StudentSignUp } from './components/student-sign-up';
 import { subscribeToRoomByID } from 'kiwi/api/subscribe-to-room';
 import { RoomNotFound } from './components/room-not-found';
 import { QuestionStep } from 'kiwi/common/components/question-step';
-
+import { Card, Elevation } from '@blueprintjs/core';
 export class StudentPage extends React.Component {
   state = {
     error: null,
@@ -45,6 +45,7 @@ export class StudentPage extends React.Component {
 
     return (
       <div className="kw-full-height kw-full-width kw-flex kw-flex-column kw-align-items-center kw-justify-content-center">
+        
         <QuestionStep
           onAnswer={this._onAnswer}
           questionID={this.state.room.questionID}

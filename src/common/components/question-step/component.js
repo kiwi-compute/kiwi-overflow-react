@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import * as React from 'react';
+import React from 'react';
+import { Card, Elevation } from '@blueprintjs/core';
 import { StepInfo, SubStep } from 'kiwi/common/models/steps';
 import { Button } from '@blueprintjs/core';
 import { AnswerStep } from './components/answer-step';
@@ -33,6 +34,25 @@ export class QuestionStep extends React.Component {
     if (this.props.step !== prevProps.step) {
       this.setState({ subStep: SubStep.Answer });
     }
+  }
+
+
+
+  _advanceStep = () => {
+    this.setState({ subStep: this.state.subStep + 1 });
+  }
+
+  _onAnswer = (answer) => {
+    this.props.onAnswer(answer);
+    this._advanceStep();
+  }
+
+  _retrieveQuestion = () => {
+    getQuestionByID(this.props.questionID).then((question) => {
+      this.setState({ error: null, loading: false, question });
+    }).catch((error) => {
+      this.setState({ error, loading: false, question: null });
+    });
   }
 
   render() {
@@ -75,27 +95,17 @@ export class QuestionStep extends React.Component {
     }
 
     return (
-      <div className="question-step kw-flex kw-flex-column kw-align-items-center">
-        <h2>{StepInfo[this.props.step].prompt}</h2>
-        <div className="kw-full-width kw-flex kw-flex-column kw-align-items-center">{stepContent}</div>
-      </div>
+      <React.Fragment>
+        <div className="question-step kw-flex kw-flex-column kw-align-items-center">
+          <Card elevation={Elevation.TWO}>
+            <h2>{StepInfo[this.props.step].prompt}</h2>
+          </Card>
+          <Card>
+            {stepContent}
+          </Card>
+          <div className="kw-full-width kw-flex kw-flex-column kw-align-items-center"></div>
+        </div>
+      </React.Fragment>
     )
-  }
-
-  _advanceStep = () => {
-    this.setState({ subStep: this.state.subStep + 1 });
-  }
-
-  _onAnswer = (answer) => {
-    this.props.onAnswer(answer);
-    this._advanceStep();
-  }
-
-  _retrieveQuestion = () => {
-    getQuestionByID(this.props.questionID).then((question) => {
-      this.setState({ error: null, loading: false, question });
-    }).catch((error) => {
-      this.setState({ error, loading: false, question: null });
-    });
   }
 }
