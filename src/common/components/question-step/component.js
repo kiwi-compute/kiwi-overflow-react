@@ -8,6 +8,7 @@ import { ReviewStep } from './components/review-step';
 import { VoteStep } from './components/vote-step';
 import { getQuestionByID } from 'kiwi/api/get-question';
 import './styles.css';
+import { DERIVE_COLUMN } from '@blueprintjs/icons/lib/esm/generated/iconContents';
 
 export class QuestionStep extends React.Component {
   static propTypes = {
@@ -95,17 +96,14 @@ export class QuestionStep extends React.Component {
     }
 
     return (
-      <React.Fragment>
-        <div className="question-step kw-flex kw-flex-column kw-align-items-center">
-          <Card elevation={Elevation.TWO}>
+      <div style={{display: 'flex', alignItems: 'center'}}>
+          <Card style={{width: '305px', height: '450px'}} elevation={Elevation.TWO} styleN>
             <h2>{StepInfo[this.props.step].prompt}</h2>
           </Card>
-          <Card>
+          <Card style={{width: '482px', height: '392px'}} elevation={Elevation.TWO}>
             {stepContent}
           </Card>
-          <div className="kw-full-width kw-flex kw-flex-column kw-align-items-center"></div>
-        </div>
-      </React.Fragment>
+      </div>
     )
   }
 }
