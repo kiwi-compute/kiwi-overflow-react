@@ -6,10 +6,6 @@ import { Button } from '@blueprintjs/core';
 import './styles.css';
 
 class QuestionPageComponent extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     // TODO: Get question number
     const questionNumber = 1;

@@ -1,0 +1,8 @@
+.student-page--header {
+  position: fixed;
+  top: 0;
+}
+
+.student-page--timer {
+  width: 300px;
+}
