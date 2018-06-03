@@ -69,14 +69,14 @@ export class TeacherRoom extends React.Component {
               </div>
             </div>
           ) : (
-            <div className="teacher-room-info">
-              <div className="card">
+            <div className="teacher-room-info kw-flex kw-flex-column">
+              <div className="card kw-mg-1">
                 <Card elevation={Elevation.TWO}>
                   <h1>URL:</h1>
                   <p>{`/${this.props.match.params.roomName}`}</p>
                 </Card>
               </div>
-              <div className="card">
+              <div className="card kw-mg-1">
                 <Card elevation={Elevation.TWO}>
                   <h1>Number of students:</h1>
                   <p>{`${this.state.studentCount}`}</p>
