@@ -1,0 +1,12 @@
+.content {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 15rem;
+    text-align: center;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  
