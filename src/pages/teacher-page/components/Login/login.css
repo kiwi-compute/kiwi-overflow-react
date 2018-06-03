@@ -4,7 +4,9 @@ html {
 
 .header {
   margin-bottom: 20px;
-  color: purple;
+  color:#654D94;
+  font-family: 'Roboto', sans-serif;
+  font-size:30px
 }
 
 .wrapper {
@@ -18,3 +20,4 @@ html {
   margin-top: 15rem;
   text-align: center;
 }
+.registerButton{background-color:#02DEAE !important; font-size: 17px !important}
