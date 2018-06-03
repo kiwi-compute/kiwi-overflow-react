@@ -9,7 +9,6 @@ import { TeacherRoom } from '../teacher-page/components/TeacherRoom';
 
 import '@blueprintjs/core/lib/css/blueprint.css';
 import '@blueprintjs/icons/lib/css/blueprint-icons.css';
-// import './styles.css';
 
 export class Root extends React.Component {
   render() {

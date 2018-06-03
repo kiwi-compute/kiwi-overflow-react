@@ -2,6 +2,7 @@ import * as React from 'react';
 import { getRoomByName } from '../../api/get-room';
 import { createStudent } from '../../api/create-student';
 import { createAnswer } from '../../api/create-answer';
+import { addStudentToRoom } from '../../api/add-student-to-room';
 import { StudentSignUp } from './components/student-sign-up';
 import { subscribeToRoomByID } from '../../api/subscribe-to-room';
 import { RoomNotFound } from './components/room-not-found';
@@ -60,6 +61,7 @@ export class StudentPage extends React.Component {
 
   _createStudent = (studentName) => {
     return createStudent({ name: studentName }).then((student) => {
+      addStudentToRoom(this.state.room.id, student.id);
       this.setState({ student });
     });
   }
@@ -89,6 +91,5 @@ export class StudentPage extends React.Component {
   }
 
   _unsubscribeFromRoomChanges = () => {
-    console.log('unsubscribe');
   }
 }
