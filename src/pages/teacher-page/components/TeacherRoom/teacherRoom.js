@@ -47,7 +47,6 @@ export class TeacherRoom extends React.Component {
   }
 
   render() {
-    console.log('state', this.state);
     return (
       <div className="kw-flex kw-full-height kw-justify-content-center kw-align-items-center">
          <NavbarComponent authenticated />
