@@ -1,12 +1,35 @@
-.content {
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 15rem;
-    text-align: center;
-  }
 
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-  }
-  
+.findroom-page {
+  display: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  background-color: #471F62;
+  color: white;
+}
+
+.content {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10rem;
+  text-align: center;
+}
+
+.hello-text {
+  font-size: 1.5em;
+  max-width: 375px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-image {
+  width: 300px;
+  margin-bottom: 50px;
+}
+
+.content input {
+  min-width: 300px;
+  margin: 25px 6px 25px 6px;
+}
