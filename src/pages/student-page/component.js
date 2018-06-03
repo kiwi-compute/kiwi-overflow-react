@@ -42,8 +42,6 @@ export class StudentPage extends React.Component {
       return <StudentSignUp onSubmit={this._createStudent} />
     }
 
-    console.log('state...', this.state);
-
     return (
       <React.Fragment>
         <div>Student Page</div>
@@ -52,7 +50,9 @@ export class StudentPage extends React.Component {
         <QuestionStep
           onAnswer={this._onAnswer}
           questionID={this.state.room.questionID}
+          roomID={this.state.room.id}
           step={this.state.room.step}
+          studentID={this.state.student.id}
         />
       </React.Fragment>
     );
