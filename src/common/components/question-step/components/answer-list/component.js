@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import * as React from 'react';
 import { AnswerPropType } from 'kiwi/common/models/answer';
 import { AnswerItem } from './components/answer-item';
-import { Card } from '@blueprintjs/core';
+import { Card, Text } from '@blueprintjs/core';
 import './styles.css';
 
 export class AnswerList extends React.Component {
@@ -14,11 +14,15 @@ export class AnswerList extends React.Component {
   render() {
     return (
       <Card className="answer-list kw-flex kw-flex-column kw-full-width">
-        {this.props.answers.map((answer) => (
-          <div key={answer.id}>
-            <AnswerItem answer={answer} isVotingMode={this.props.isVotingMode} />
-          </div>
-        ))}
+        {!this.props.answers.length
+          ? <Text>Answers are coming! Hold Tight!</Text>
+          : (
+            this.props.answers.map((answer) => (
+              <div key={answer.id}>
+                <AnswerItem answer={answer} isVotingMode={this.props.isVotingMode} />
+              </div>
+            ))
+          )}
       </Card>
     );
   }
