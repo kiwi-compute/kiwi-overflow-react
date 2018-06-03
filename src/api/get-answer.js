@@ -1,4 +1,4 @@
-import { db } from '..';
+import { db } from 'kiwi';
 
 export function getAnswersForStep(roomID, questionID, step) {
   return db.collection('answers')

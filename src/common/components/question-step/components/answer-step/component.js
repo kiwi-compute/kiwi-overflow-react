@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import * as React from 'react';
-import { QuestionPropType } from '../../../../models/question';
+import { QuestionPropType } from 'kiwi/common/models/question';
 import { Button } from '@blueprintjs/core';
 
 export class AnswerStep extends React.Component {

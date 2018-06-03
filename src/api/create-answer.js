@@ -1,4 +1,4 @@
-import { db } from '..';
+import { db } from 'kiwi';
 
 export function createAnswer(answer) {
   return db.collection('answers').add({

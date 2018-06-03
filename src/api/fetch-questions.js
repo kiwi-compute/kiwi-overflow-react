@@ -1,4 +1,4 @@
-import { db } from '..';
+import { db } from 'kiwi';
 
 export function fetchQuestions() {
   return db.collection('questions').get().then((questions) => {

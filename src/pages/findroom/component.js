@@ -30,13 +30,12 @@ class FindRoomComponent extends React.Component {
           </div>
           <form onSubmit={this.handleSubmit}>
             <label>
-              <input class="pt-input .modifier" type="text" value={this.state.value} onChange={this.handleChange} />
+              <input className="pt-input .modifier" type="text" value={this.state.value} onChange={this.handleChange} />
             </label>
             <Button text="Submit" />
           </form>
         </div>
       </div>
-
     );
   }
 }

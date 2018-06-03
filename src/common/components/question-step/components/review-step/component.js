@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import * as React from 'react';
-import { getTopAnswersForStep } from '../../../../../api/get-answer';
-import { QuestionPropType } from '../../../../models/question';
+import { getTopAnswersForStep } from 'kiwi/api/get-answer';
+import { QuestionPropType } from 'kiwi/common/models/question';
 import { Card, Icon, Text } from '@blueprintjs/core';
 import { IconNames } from "@blueprintjs/icons";
 
