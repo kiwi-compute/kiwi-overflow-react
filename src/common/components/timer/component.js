@@ -1,30 +1,39 @@
 import React from 'react';
-import { ProgressBar } from '@blueprintjs/core';
+import { ProgressBar, Intent } from '@blueprintjs/core';
 
 import './styles.css';
 
+const TICK_DURATION = 100;
+
 export class Timer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      secondsLeft: this.props.totalTime
-    };
-    this.currentInterval = null;
-  }
+  totalTicks = this.props.totalTime * 1000;
+  currentInterval = null;
+  state = {
+    complete: false,
+    ticksLeft: this.totalTicks
+  };
 
   componentDidMount() {
     this.currentInterval = setInterval(() => {
-      if (this.state.secondsLeft === 0) {
+      if (this.state.ticksLeft <= 0) {
         clearInterval(this.currentInterval);
       } else {
         this.tick();
       }
-    }, 1000);
+    }, TICK_DURATION);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.ticksLeft <= 0 && !this.state.complete) {
+      clearInterval(this.currentInterval);
+      this.setState({ ticksLeft: 0, complete: true });
+      this.props.onTimerDone();
+    }
   }
 
   tick = () => {
-    this.setState(({ secondsLeft }) => {
-      return { secondsLeft: secondsLeft - 1 };
+    this.setState(({ ticksLeft }) => {
+      return { ticksLeft: ticksLeft - TICK_DURATION };
     });
   };
 
@@ -33,14 +42,11 @@ export class Timer extends React.Component {
   }
 
   render() {
-    const { secondsLeft } = this.state;
-
-    const progressPercentage = this.state.secondsLeft / this.props.totalTime;
-
-    if (secondsLeft === 0 && this.props.onTimerDone) {
-      this.props.onTimerDone();
-    }
-
-    return <ProgressBar value={progressPercentage} animate={false} intent={'success'} animate={true} />;
+    return <ProgressBar
+      className="progress-bar"
+      value={this.state.ticksLeft / this.totalTicks}
+      animate={true}
+      intent={Intent.SUCCESS}
+    />;
   }
 }

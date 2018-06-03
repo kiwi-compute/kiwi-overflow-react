@@ -8,3 +8,5 @@ export function transitionStep(step, roomID) {
     })
   })
 }
+
+window.transitionStep = transitionStep;

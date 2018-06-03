@@ -13,12 +13,12 @@ export class AnswerList extends React.Component {
 
   render() {
     return (
-      <Card className="answer-list kw-flex kw-flex-column kw-full-width">
+      <Card className="answer-list kw-flex kw-flex-column kw-full-width kw-align-items-center">
         {!this.props.answers.length
           ? <Text>Answers are coming! Hold Tight!</Text>
           : (
             this.props.answers.map((answer) => (
-              <div key={answer.id}>
+              <div className="kw-full-width" key={answer.id}>
                 <AnswerItem answer={answer} isVotingMode={this.props.isVotingMode} />
               </div>
             ))
