@@ -23,17 +23,26 @@ class FindRoomComponent extends React.Component {
 
   render() {
     return (
-      <div className="wrapper">
-        <div className="content">
-          <div>
-            Your teacher should give you the name of a classroom to join. Enter it below:
+      <div className="findroom-page">
+        <div className="wrapper">
+          <div className="content">
+            <img className="logo-image" src="https://kiwicompute.com/assets/images/landing-logo.svg" />
+            <div className="hello-text">
+              Your teacher should give you the name of a classroom to join.
+              Enter it below:
+            </div>
+            <form onSubmit={this.handleSubmit}>
+              <label>
+                <input
+                  className="pt-input .modifier"
+                  type="text"
+                  value={this.state.value}
+                  onChange={this.handleChange}
+                />
+              </label>
+              <Button text="Submit" />
+            </form>
           </div>
-          <form onSubmit={this.handleSubmit}>
-            <label>
-              <input className="pt-input .modifier" type="text" value={this.state.value} onChange={this.handleChange} />
-            </label>
-            <Button text="Submit" />
-          </form>
         </div>
       </div>
     );
