@@ -1,5 +1,6 @@
 
 .teacher-landing-content {
+  background-color: #88CC41;
   padding: 30px;
   position: fixed;
   top: 40%;
@@ -31,4 +32,8 @@
   position: fixed;
   bottom: 20vh;
   right: 20vw;
+}
+
+.teacher-landing-create-room-button {
+  background-color: #88CC41 !important;
 }

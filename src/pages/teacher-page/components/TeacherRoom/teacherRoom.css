@@ -4,6 +4,10 @@
   height: 100%;
 }
 
+.teacher-page {
+  background-color: #88CC41;
+}
+
 .teacher-room-info {
   margin: auto;
   display: flex;

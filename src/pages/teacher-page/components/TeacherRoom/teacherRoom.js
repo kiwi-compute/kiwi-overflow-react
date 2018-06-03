@@ -48,7 +48,7 @@ export class TeacherRoom extends React.Component {
 
   render() {
     return (
-      <div className="kw-flex kw-full-height kw-justify-content-center kw-align-items-center">
+      <div className="kw-flex kw-full-height kw-justify-content-center kw-align-items-center teacher-page">
          <NavbarComponent authenticated />
         {this.state.room ? (
           this.state.step >= 0 && this.state.subStep ? (
