@@ -1,4 +1,4 @@
-import { db } from '..';
+import { db } from 'kiwi';
 
 export function getQuestionByID(id) {
   return db.collection('questions').doc(id).get().then((question) => {

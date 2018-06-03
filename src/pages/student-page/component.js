@@ -1,11 +1,12 @@
 import * as React from 'react';
-import { getRoomByName } from '../../api/get-room';
-import { createStudent } from '../../api/create-student';
-import { createAnswer } from '../../api/create-answer';
+import { getRoomByName } from 'kiwi/api/get-room';
+import { createStudent } from 'kiwi/api/create-student';
+import { createAnswer } from 'kiwi/api/create-answer';
+import { addStudentToRoom } from 'kiwi/api/add-student-to-room';
 import { StudentSignUp } from './components/student-sign-up';
-import { subscribeToRoomByID } from '../../api/subscribe-to-room';
+import { subscribeToRoomByID } from 'kiwi/api/subscribe-to-room';
 import { RoomNotFound } from './components/room-not-found';
-import { QuestionStep } from '../../common/components/question-step';
+import { QuestionStep } from 'kiwi/common/components/question-step';
 
 export class StudentPage extends React.Component {
   state = {
@@ -42,24 +43,22 @@ export class StudentPage extends React.Component {
       return <StudentSignUp onSubmit={this._createStudent} />
     }
 
-    console.log('state...', this.state);
-
     return (
-      <React.Fragment>
-        <div>Student Page</div>
-        <div>Name: {room.name}</div>
-
+      <div className="kw-full-height kw-full-width kw-flex kw-flex-column kw-align-items-center kw-justify-content-center">
         <QuestionStep
           onAnswer={this._onAnswer}
           questionID={this.state.room.questionID}
+          roomID={this.state.room.id}
           step={this.state.room.step}
+          studentID={this.state.student.id}
         />
-      </React.Fragment>
+      </div>
     );
   }
 
   _createStudent = (studentName) => {
     return createStudent({ name: studentName }).then((student) => {
+      addStudentToRoom(this.state.room.id, student.id);
       this.setState({ student });
     });
   }
@@ -89,6 +88,5 @@ export class StudentPage extends React.Component {
   }
 
   _unsubscribeFromRoomChanges = () => {
-    console.log('unsubscribe');
   }
 }

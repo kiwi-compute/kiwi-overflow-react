@@ -3,6 +3,8 @@ import { withRouter } from 'react-router';
 import { Button } from '@blueprintjs/core';
 import './styles.css';
 
+import { Timer } from 'kiwi/common/components/timer';
+
 class FindRoomComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -30,15 +32,14 @@ class FindRoomComponent extends React.Component {
           </div>
           <form onSubmit={this.handleSubmit}>
             <label>
-              <input class="pt-input .modifier" type="text" value={this.state.value} onChange={this.handleChange} />
+              <input className="pt-input .modifier" type="text" value={this.state.value} onChange={this.handleChange} />
             </label>
             <Button text="Submit" />
           </form>
         </div>
       </div>
-
     );
   }
 }
 
-export const FindRoom = withRouter(FindRoomComponent);
+export default withRouter(FindRoomComponent);

@@ -1,19 +1,16 @@
-import React from "react";
-
-import NavbarComponent from '../Navbar/navbar';
-
-import { generateRandomName } from '../../../../utils/randomNameGenerator';
-import { createRoom } from '../../../../api/create-room';
-import { fetchQuestions } from '../../../../api/fetch-questions';
-
-import "./landing.css";
+import * as React from 'react';
+import { NavbarComponent } from 'kiwi/pages/teacher-page/components/Navbar';
+import { generateRandomName } from 'kiwi/utils/randomNameGenerator';
+import { createRoom } from 'kiwi/api/create-room';
+import { fetchQuestions } from 'kiwi/api/fetch-questions';
+import './landing.css';
 
 export class TeacherLandingPage extends React.Component {
   state = {
     questions: [],
     selectedId: null,
   }
-  
+
   componentDidMount() {
     fetchQuestions().then((questions) => {
       this.setState({
@@ -51,7 +48,11 @@ export class TeacherLandingPage extends React.Component {
       </option>
     ];
     for (let i = 0; i < 5; i++) {
-      numbers.push(<option key={i}>{i + 1}</option>);
+      let unit = 'minutes';
+      if (i === 0) {
+        unit = 'minute';
+      }
+      numbers.push(<option key={i}>{`${i + 1} ${unit}`}</option>);
     }
     return <select onChange={(e) => {this._selectTimer(e.target.value)}} className="teacher-landing-select">{numbers}</select>;
   };

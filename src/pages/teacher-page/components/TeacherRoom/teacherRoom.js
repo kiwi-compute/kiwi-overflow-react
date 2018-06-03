@@ -3,7 +3,7 @@ import React from 'react';
 import './teacherRoom.css';
 import { getRoomByName } from '../../../../api/get-room';
 import { subscribeToRoomByID } from '../../../../api/subscribe-to-room';
-import NavbarComponent from '../Navbar/navbar';
+import { NavbarComponent } from '../Navbar';
 import { SVGSpinner, Card, Elevation, Button } from '@blueprintjs/core';
 import { transitionStep } from '../../../../api/transition-step';
 
@@ -22,7 +22,6 @@ export class TeacherRoom extends React.Component {
         room,
       })
       subscribeToRoomByID(room.id, (room) => {
-        console.log('room', room);
         if (room.students) {
           this.setState({
             students: room.students,

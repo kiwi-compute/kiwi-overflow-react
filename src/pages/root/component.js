@@ -1,20 +1,19 @@
 import * as React from 'react';
 import { Switch, Route, Redirect } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
-import { TeacherPage } from '../teacher-page/components/Login';
-import { TeacherLandingPage } from '../teacher-page/components/Landing';
-import { StudentPage } from '../student-page';
-import { FindRoom } from '../findroom';
-import { TeacherRoom } from '../teacher-page/components/TeacherRoom';
+import { TeacherPage } from 'kiwi/pages/teacher-page/components/Login';
+import { StudentPage } from 'kiwi/pages/student-page';
+import { TeacherLandingPage } from 'kiwi/pages/teacher-page/components/Landing';
+import FindRoom from 'kiwi/pages/findroom/component';
+import { TeacherRoom } from 'kiwi/pages/teacher-page/components/TeacherRoom';
 
 import '@blueprintjs/core/lib/css/blueprint.css';
 import '@blueprintjs/icons/lib/css/blueprint-icons.css';
-// import './styles.css';
 
 export class Root extends React.Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         <BrowserRouter>
           <Switch>
             <Route exact path="/" render={() => <Redirect to="/findroom"/>} />
@@ -25,7 +24,7 @@ export class Root extends React.Component {
             <Route exact path="/:roomName" component={StudentPage} />
           </Switch>
         </BrowserRouter>
-      </div>
+      </React.Fragment>
     );
   }
 }
