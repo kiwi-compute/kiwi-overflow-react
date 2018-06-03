@@ -64,7 +64,7 @@ export class StudentPage extends React.Component {
       timer = (
         <Timer
           key={`${room.id}-${room.step}-${this.state.subStep}`}
-          totalTime={30}
+          totalTime={5}
           onTimerDone={this._advanceSubStep}
         />
       );

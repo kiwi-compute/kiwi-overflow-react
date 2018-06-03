@@ -3,8 +3,6 @@ import { withRouter } from 'react-router';
 import { Button } from '@blueprintjs/core';
 import './styles.css';
 
-import { Timer } from 'kiwi/common/components/timer';
-
 class FindRoomComponent extends React.Component {
   constructor(props) {
     super(props);

@@ -22,6 +22,7 @@ class SubmissionsComponent extends React.Component {
               width="50px"
               height="50px"
               className="icon"
+              alt="Profile"
               src="https://png.icons8.com/color/1600/person-male.png"
             />
           </div>

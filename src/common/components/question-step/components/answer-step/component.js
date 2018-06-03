@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import * as React from 'react';
 import { QuestionPropType } from 'kiwi/common/models/question';
 import { Button, TextArea } from '@blueprintjs/core';
+import './styles.css';
 
 export class AnswerStep extends React.Component {
   static propTypes = {
@@ -15,11 +16,13 @@ export class AnswerStep extends React.Component {
 
   render() {
     return (
-      <div className="kw-flex kw-flex-column">
-        <div className="kw-mg-y-1">
+      <div className="kw-flex kw-flex-column kw-full-height">
+        <div className="kw-flex-grow-1 kw-mg-b-1">
           <TextArea
-            className="kw-full-width"
+            className="answer-step--textarea kw-full-width kw-full-height"
+            large={true}
             name="answer"
+            placeholder="Type your answer here..."
             value={this.state.answer}
             onChange={this._handleTextAreaChanged}
           />
