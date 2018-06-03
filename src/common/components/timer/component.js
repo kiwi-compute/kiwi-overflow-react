@@ -1,7 +1,6 @@
 import React from 'react';
 
 import './styles.css';
-import 'csshake/dist/csshake.css';
 
 export class Timer extends React.Component {
   constructor(props) {
