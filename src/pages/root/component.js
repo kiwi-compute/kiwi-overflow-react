@@ -23,8 +23,9 @@ export class Root extends React.Component {
             <Route exact path="/teacher" component={TeacherPage} />
             <Route exact path="/teacher/:teacherID" component={TeacherLandingPage} />
             <Route exact path="/teacher/:teacherID/:roomName" component={TeacherRoom} />
-            <Route exact path="/teacher/:teacherID/:roomName/question" component={TeacherQuestionPage} />
             <Route exact path="/teacher/:teacherID/:roomName/submissions" component={TeacherSubmissionsPage} />            
+            <Route exact path="/teacher/:teacherID/:roomName/question" component={TeacherQuestionPage} />
+            <Route exact path="/teacher/:teacherID/:roomName" component={TeacherRoom} />
             <Route exact path="/:roomName" component={StudentPage} />
           </Switch>
         </BrowserRouter>
