@@ -8,6 +8,7 @@ import FindRoom from 'kiwi/pages/findroom/component';
 import { TeacherRoom } from 'kiwi/pages/teacher-page/components/TeacherRoom';
 import { QuestionPage as TeacherQuestionPage } from 'kiwi/pages/teacher-page/components/Question';
 import { SubmissionsPage as TeacherSubmissionsPage } from 'kiwi/pages/teacher-page/components/Submissions'
+import { LeaderboardPage as TeacherLeaderboardPage } from 'kiwi/pages/teacher-page/components/Leaderboard';
 
 import '@blueprintjs/core/lib/css/blueprint.css';
 import '@blueprintjs/icons/lib/css/blueprint-icons.css';
@@ -25,6 +26,7 @@ export class Root extends React.Component {
             <Route exact path="/teacher/:teacherID/:roomName" component={TeacherRoom} />
             <Route exact path="/teacher/:teacherID/:roomName/submissions" component={TeacherSubmissionsPage} />            
             <Route exact path="/teacher/:teacherID/:roomName/question" component={TeacherQuestionPage} />
+            <Route exact path="/teacher/:teacherID/:roomName/leaderboard" component={TeacherLeaderboardPage} />            
             <Route exact path="/teacher/:teacherID/:roomName" component={TeacherRoom} />
             <Route exact path="/:roomName" component={StudentPage} />
           </Switch>
