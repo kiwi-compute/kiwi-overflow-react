@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { getRoomByName } from '../../api/get-room';
 import { createStudent } from '../../api/create-student';
+import { createAnswer } from '../../api/create-answer';
 import { StudentSignUp } from './components/student-sign-up';
 import { subscribeToRoomByID } from '../../api/subscribe-to-room';
 import { RoomNotFound } from './components/room-not-found';
+import { QuestionStep } from '../../common/components/question-step';
 
 export class StudentPage extends React.Component {
   state = {
@@ -40,12 +42,18 @@ export class StudentPage extends React.Component {
       return <StudentSignUp onSubmit={this._createStudent} />
     }
 
+    console.log('state...', this.state);
+
     return (
       <React.Fragment>
         <div>Student Page</div>
         <div>Name: {room.name}</div>
 
-        <div>Question: {room.question}</div>
+        <QuestionStep
+          onAnswer={this._onAnswer}
+          questionID={this.state.room.questionID}
+          step={this.state.room.step}
+        />
       </React.Fragment>
     );
   }
@@ -53,6 +61,16 @@ export class StudentPage extends React.Component {
   _createStudent = (studentName) => {
     return createStudent({ name: studentName }).then((student) => {
       this.setState({ student });
+    });
+  }
+
+  _onAnswer = (answer) => {
+    createAnswer({
+      questionID: this.state.room.questionID,
+      roomID: this.state.room.id,
+      step: this.state.room.step,
+      studentID: this.state.student.id,
+      text: answer,
     });
   }
 
