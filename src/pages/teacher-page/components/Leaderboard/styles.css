@@ -1,14 +1,9 @@
-.submissions-page {
-  font-size: 1rem;
+.leaderboard-page {
   display: flex;
   flex-direction: column;
 }
 
-.submissions-page p {
-  font-size: 16px;
-}
-
-.submissions-page .container {
+.leaderboard-page .container {
   padding: 50px;
   margin-right: auto;
   margin-left: auto;
@@ -16,7 +11,7 @@
   text-align: center;
 }
 
-.submissions-page .question {
+.leaderboard-page .question {
   display: inline-block;
   max-height: 500px;
   width: 400px;  
@@ -24,34 +19,13 @@
   background-color: darkgrey;
 }
 
-.submissions-page .submissions {
+.submissions-page .rankings {
   display: inline-block;
   max-width: 450px;
   max-height: 450px;
   padding: 10px;
   background-color: lightgrey;
   overflow-y: scroll;
-}
-
-.submissions-page .avatar {
-  display: inline-block;
-  padding-top: auto;
-  padding-bottom: auto;
-}
-
-.submissions-page .icon {
-  border-radius: 50px;
-  top: 0;
-}
-
-.submissions-page .submissions {
-  display: inline-block;
-}
-
-.submissions-page .answer {
-  padding-bottom: 3em;
-  display: inline-block;
-  max-width: 300px;
 }
 
 .studentButton {
@@ -71,7 +45,7 @@
   font-size: 30px;
 }
 
-.submissions-page .footer {
+.leaderboard-page .footer {
   background-color: #654d94;
   width: 100%;
   height: 40px;

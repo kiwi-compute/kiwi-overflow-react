@@ -1,3 +1,8 @@
 .question-step {
   width: 80%;
 }
+
+.question-step--content {
+  width: 36em;
+  height: 28em;
+}
