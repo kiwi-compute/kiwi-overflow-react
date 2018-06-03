@@ -7,6 +7,7 @@ import { AnswerStep } from './components/answer-step';
 import { ReviewStep } from './components/review-step';
 import { VoteStep } from './components/vote-step';
 import { getQuestionByID } from 'kiwi/api/get-question';
+import { purpledarker, greylight } from '../../../brand';
 import './styles.css';
 import { DERIVE_COLUMN } from '@blueprintjs/icons/lib/esm/generated/iconContents';
 
@@ -22,9 +23,9 @@ export class QuestionStep extends React.Component {
 
   state = {
     subStep: this.props.subStep || SubStep.Answer,
-    error: null,
+    error: '',
     loading: true,
-    question: null,
+    question: '',
   }
 
   componentDidMount() {
@@ -50,7 +51,7 @@ export class QuestionStep extends React.Component {
 
   _retrieveQuestion = () => {
     getQuestionByID(this.props.questionID).then((question) => {
-      this.setState({ error: null, loading: false, question });
+      this.setState({ error: '', loading: false, question });
     }).catch((error) => {
       this.setState({ error, loading: false, question: null });
     });
@@ -63,14 +64,12 @@ export class QuestionStep extends React.Component {
       return <div>Loading...</div>
     } else if (error) {
       return <div>Error...</div>
-    } else if (!question) {
-      return <div>Question Not Found</div>
     }
 
     let stepContent = null;
     switch (this.state.subStep) {
       case SubStep.Answer:
-        stepContent = <AnswerStep question={this.state.question} onAnswer={this._onAnswer} />
+        stepContent = <AnswerStep question={''} onAnswer={this._onAnswer} />
         break;
       case SubStep.Vote:
         stepContent = (
@@ -97,9 +96,10 @@ export class QuestionStep extends React.Component {
 
     return (
       <div style={{display: 'flex', alignItems: 'center'}}>
-          <Card style={{width: '305px', height: '450px'}} elevation={Elevation.TWO} styleN>
-            <h2>{StepInfo[this.props.step].prompt}</h2>
+          <Card style={{width: '305px', height: '450px', backgroundColor: purpledarker}} elevation={Elevation.TWO}>
+            <h2 style={{color: '#CCCCCC', marginBottom: '1em' }}>{this.state.question.text}</h2><h3 style={{color: '#EEEEEE'}}>{StepInfo[this.props.step].prompt}</h3>
           </Card>
+          
           <Card style={{width: '482px', height: '392px'}} elevation={Elevation.TWO}>
             {stepContent}
           </Card>

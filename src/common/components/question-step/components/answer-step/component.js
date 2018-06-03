@@ -16,7 +16,6 @@ export class AnswerStep extends React.Component {
   render() {
     return (
       <div className="kw-flex kw-flex-column">
-        <div>{this.props.question.text}</div>
         <div className="kw-mg-y-1">
           <TextArea
             className="kw-full-width"
