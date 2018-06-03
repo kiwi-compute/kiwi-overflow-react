@@ -6,13 +6,14 @@ import { subscribeToRoomByID } from '../../../../api/subscribe-to-room';
 import { NavbarComponent } from '../Navbar';
 import { SVGSpinner, Card, Elevation, Button } from '@blueprintjs/core';
 import { transitionStep } from '../../../../api/transition-step';
+import { subscribeToRoomJoin } from '../../../../api/subscribe-to-student-join'
 
 //TODO: Rename to 'lobby'
 
 export class TeacherRoom extends React.Component {
   state = {
     room: null,
-    students: [],
+    studentCount: null,
     step: null,
   }
 
@@ -22,11 +23,16 @@ export class TeacherRoom extends React.Component {
         room,
       })
       subscribeToRoomByID(room.id, (room) => {
-        if (room.students) {
+        if (room.step) {
           this.setState({
-            students: room.students,
+            step: room.step,
           })
         }
+      })
+      subscribeToRoomJoin(room.id, (count) => {
+        this.setState({
+          studentCount: count,
+        })
       })
     })
   }
@@ -46,7 +52,7 @@ export class TeacherRoom extends React.Component {
             <div className="card">
               <Card elevation={Elevation.TWO}>
                 <h1>Number of students:</h1>
-                <p>{`${this.state.students.length}`}</p>
+                <p>{`${this.state.studentCount}`}</p>
               </Card>
             </div>
           </div>
