@@ -18,7 +18,6 @@ html {
 .content {
   margin-right: auto;
   margin-left: auto;
-  margin-top: 15rem;
   text-align: center;
 }
-.registerButton{background-color:#02DEAE !important; font-size: 17px !important}
+.registerButton{font-size: 17px !important}
