@@ -11,7 +11,9 @@ export class QuestionStep extends React.Component {
   static propTypes = {
     onAnswer: PropTypes.func,
     questionID: PropTypes.string.isRequired,
+    roomID: PropTypes.string.isRequired,
     step: PropTypes.number.isRequired,
+    studentID: PropTypes.string.isRequired,
   }
 
   state = {
@@ -48,10 +50,24 @@ export class QuestionStep extends React.Component {
         stepContent = <AnswerStep question={this.state.question} onAnswer={this._onAnswer} />
         break;
       case SubStep.Vote:
-        stepContent = <VoteStep question={this.state.question} />
+        stepContent = (
+          <VoteStep
+            question={this.state.question}
+            roomID={this.props.roomID}
+            step={this.props.step}
+            studentID={this.props.studentID}
+          />
+        );
         break;
       case SubStep.Review:
-        stepContent = <ReviewStep question={this.state.question} />
+        stepContent = (
+          <ReviewStep
+            question={this.state.question}
+            roomID={this.props.roomID}
+            step={this.props.step}
+            studentID={this.props.studentID}
+          />
+        );
         break;
       default:
     }
