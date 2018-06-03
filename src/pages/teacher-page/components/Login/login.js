@@ -34,7 +34,7 @@ export class TeacherPage extends React.Component {
               type="password"
               onChange={(e) => this._handleInputChange(e.target.value, 'regPassword')}
             />
-            <Button onClick={() => this._loginTeacher('regUser')} type="submit">Register</Button>
+            <Button className='registerButton'onClick={() => this._loginTeacher('regUser')} type="submit">Register</Button>
           </ControlGroup>
         </div>
       </div>

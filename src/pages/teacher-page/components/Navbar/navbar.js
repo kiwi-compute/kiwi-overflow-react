@@ -6,9 +6,9 @@ import './navbar.css';
 
 const NavbarComponent = (props) => {
   return (
-    <Navbar style={{backgroundColor: 'purple'}} className={'pt-fixed-top'}>
+    <Navbar  className='pt-fixed-top navBar'>
       <NavbarGroup align={Alignment.LEFT}>
-        <h2 style={{color: 'white'}}>Kiwi</h2>
+        <h2 className='logo'>Kiwi</h2>
       </NavbarGroup>
       <NavbarGroup align={Alignment.RIGHT}>
         {props.authenticated ? (
@@ -17,6 +17,7 @@ const NavbarComponent = (props) => {
           <ControlGroup>
             <InputGroup
               large
+              className='login'
               value={props.username}
               placeholder="Username"
               type="text"
@@ -24,12 +25,13 @@ const NavbarComponent = (props) => {
             />
             <InputGroup
               large
+              className='login'
               value={props.password}
               placeholder="Password"
               type="password"
               onChange={(e) => props.handleInputChange(e.target.value, 'loginPassword')}
             />
-            <Button onClick={() => props.loginTeacher('loginUsername')} type="submit">Login</Button>
+            <Button className='loginButton'onClick={() => props.loginTeacher('loginUsername')} type="submit">Login</Button>
           </ControlGroup>
         )}
       </NavbarGroup>
