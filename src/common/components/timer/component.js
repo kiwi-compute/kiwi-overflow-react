@@ -1,4 +1,5 @@
 import React from 'react';
+import { ProgressBar } from '@blueprintjs/core';
 
 import './styles.css';
 
@@ -34,14 +35,12 @@ export class Timer extends React.Component {
   render() {
     const { secondsLeft } = this.state;
 
-    if (secondsLeft === 0) {
+    const progressPercentage = this.state.secondsLeft / this.props.totalTime;
+
+    if (secondsLeft === 0 && this.props.onTimerDone) {
       this.props.onTimerDone();
     }
 
-    return (
-      <div className="timer">
-        <div>{secondsLeft}</div>
-      </div>
-    );
+    return <ProgressBar value={progressPercentage} animate={false} intent={'success'} />;
   }
 }

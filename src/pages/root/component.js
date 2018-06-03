@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { TeacherPage } from 'kiwi/pages/teacher-page/components/Login';
 import { StudentPage } from 'kiwi/pages/student-page';
 import { TeacherLandingPage } from 'kiwi/pages/teacher-page/components/Landing';
-import { FindRoom } from 'kiwi/pages/findroom';
+import FindRoom from 'kiwi/pages/findroom/component';
 import { TeacherRoom } from 'kiwi/pages/teacher-page/components/TeacherRoom';
 
 import '@blueprintjs/core/lib/css/blueprint.css';
