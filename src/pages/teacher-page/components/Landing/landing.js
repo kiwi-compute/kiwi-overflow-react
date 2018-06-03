@@ -48,7 +48,11 @@ export class TeacherLandingPage extends React.Component {
       </option>
     ];
     for (let i = 0; i < 5; i++) {
-      numbers.push(<option key={i}>{i + 1}</option>);
+      let unit = 'minutes';
+      if (i === 0) {
+        unit = 'minute';
+      }
+      numbers.push(<option key={i}>{`${i + 1} ${unit}`}</option>);
     }
     return <select onChange={(e) => {this._selectTimer(e.target.value)}} className="teacher-landing-select">{numbers}</select>;
   };
