@@ -1,0 +1,11 @@
+.submitButton{background-color:#02DEAE !important; float:right; margin-top:2px}
+.answerText{font-family:  'Roboto', sans-serif;
+    font-size:35px;
+    text-align:center
+}
+.textArea{margin-left:auto; margin-right:auto; display:block}
+.bottomDiv{background-color:#654D94; 
+            margin-top:40%                   
+  }
+  .stepText{font-family:  'Roboto', sans-serif;
+font-size:20px}
