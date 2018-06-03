@@ -42,7 +42,7 @@ export class TeacherRoom extends React.Component {
     if (prevState.step !== this.state.step) {
       setTimeout(() => {
         this.setState({ subStep: SubStep.Review });
-      }, this.state.room.timer * 2000)
+      }, this.state.room.timer * 60000 + 30000)
     }
   }
 
