@@ -1,0 +1,9 @@
+.submissions-page .question {
+  padding: 10px;
+  background-color: darkgrey;
+}
+
+.submissions-page .submissions {
+  padding: 10px;
+  background-color: lightgrey;
+}
