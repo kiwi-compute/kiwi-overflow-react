@@ -9,6 +9,7 @@ import { RoomNotFound } from './components/room-not-found';
 import { QuestionStep } from 'kiwi/common/components/question-step';
 import { SubStep } from 'kiwi/common/models/steps';
 import { Timer } from 'kiwi/common/components/timer';
+import { Text } from '@blueprintjs/core';
 import './styles.css';
 
 export class StudentPage extends React.Component {
@@ -56,7 +57,7 @@ export class StudentPage extends React.Component {
       timer = (
         <Timer
           key={`${room.id}-${room.step}`}
-          totalTime={10}
+          totalTime={room.timer * 60}
           onTimerDone={this._onAnswerStepComplete}
         />
       );
@@ -64,14 +65,22 @@ export class StudentPage extends React.Component {
       timer = (
         <Timer
           key={`${room.id}-${room.step}-${this.state.subStep}`}
-          totalTime={5}
+          totalTime={30}
           onTimerDone={this._advanceSubStep}
         />
       );
     }
 
+    if (room.step === null) {
+      return (
+        <div className="student-page kw-full-height kw-full-width kw-flex kw-flex-column kw-align-items-center kw-justify-content-center">
+          <Text>Waiting for game to start...</Text>
+        </div>
+      );
+    }
+
     return (
-      <div className="kw-full-height kw-full-width kw-flex kw-flex-column kw-align-items-center kw-justify-content-center">
+      <div className="student-page kw-full-height kw-full-width kw-flex kw-flex-column kw-align-items-center kw-justify-content-center">
         <div className="student-page--header kw-align-self-end kw-pd-1">
           {timer && <div className="student-page--timer">{timer}</div>}
         </div>

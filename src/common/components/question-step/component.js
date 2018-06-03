@@ -17,7 +17,7 @@ export class QuestionStep extends React.Component {
     step: PropTypes.number.isRequired,
     subStep: PropTypes.number,
     studentID: PropTypes.string,
-    isTeacher: PropTypes.boolean,
+    isTeacher: PropTypes.bool,
   }
 
   state = {
