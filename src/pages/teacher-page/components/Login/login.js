@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { InputGroup, ControlGroup, Button} from '@blueprintjs/core';
-import { NavbarComponent } from '../Navbar';
+import NavbarComponent from '../Navbar/navbar';
 
 import './login.css';
 
@@ -48,6 +48,6 @@ export class TeacherPage extends React.Component {
   }
 
   _loginTeacher = (state) => {
-    window.location = `teacher/${this.state[state]}`;
+    this.props.history.push(`teacher/${this.state[state]}`);
   }
 }
