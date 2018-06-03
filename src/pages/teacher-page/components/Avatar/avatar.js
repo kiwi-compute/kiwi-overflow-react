@@ -2,8 +2,6 @@ import React from "react";
 import { Menu, MenuItem, MenuDivider, Icon, Popover, Position } from "@blueprintjs/core";
 import { withRouter } from 'react-router';
 
-import "./avatar.css";
-
 class Avatar extends React.Component {
   state={
     displayMenu: false,
