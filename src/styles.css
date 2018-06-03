@@ -22,6 +22,8 @@ body {
 .kw-flex-row { flex-direction: row; }
 .kw-flex-column { flex-direction: column; }
 
+.kw-flex-grow-1 { flex-grow: 1; }
+
 .kw-justify-content-center { justify-content: center; }
 .kw-justify-content-between { justify-content: space-between; }
 .kw-justify-content-around { justify-content: space-around; }
