@@ -13,7 +13,7 @@ import { subscribeToRoomJoin } from '../../../../api/subscribe-to-student-join'
 export class TeacherRoom extends React.Component {
   state = {
     room: null,
-    studentCount: null,
+    studentCount: 0,
     step: null,
   }
 
@@ -38,6 +38,7 @@ export class TeacherRoom extends React.Component {
   }
 
   render() {
+    console.log('state', this.state);
     return (
       <div className="wrapper">
          <NavbarComponent authenticated />
@@ -55,9 +56,9 @@ export class TeacherRoom extends React.Component {
                 <p>{`${this.state.studentCount}`}</p>
               </Card>
             </div>
+            <Button onClick={() => transitionStep(1, this.state.room.id)}>Start Game</Button>
           </div>
       ) : (<SVGSpinner />)}
-      <Button onClick={() => transitionStep(1, this.state.room.id)}>Start Game</Button>
       </div>
     );
   }
