@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { getRoomByName } from '../../api/get-room';
-import { createStudent } from '../../api/create-student';
-import { createAnswer } from '../../api/create-answer';
-import { addStudentToRoom } from '../../api/add-student-to-room';
+import { getRoomByName } from 'kiwi/api/get-room';
+import { createStudent } from 'kiwi/api/create-student';
+import { createAnswer } from 'kiwi/api/create-answer';
+import { addStudentToRoom } from 'kiwi/api/add-student-to-room';
 import { StudentSignUp } from './components/student-sign-up';
-import { subscribeToRoomByID } from '../../api/subscribe-to-room';
+import { subscribeToRoomByID } from 'kiwi/api/subscribe-to-room';
 import { RoomNotFound } from './components/room-not-found';
-import { QuestionStep } from '../../common/components/question-step';
+import { QuestionStep } from 'kiwi/common/components/question-step';
 
 export class StudentPage extends React.Component {
   state = {

@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Navbar, NavbarGroup, Alignment, ControlGroup, InputGroup, Button } from '@blueprintjs/core';
-import Avatar from '../Avatar/avatar';
+import { Avatar } from 'kiwi/pages/teacher-page/components/Avatar';
 
 import './navbar.css';
 
-const NavbarComponent = (props) => {
+export const NavbarComponent = (props) => {
   return (
     <Navbar  className='pt-fixed-top navBar'>
       <NavbarGroup align={Alignment.LEFT}>
@@ -38,5 +38,3 @@ const NavbarComponent = (props) => {
     </Navbar>
   )
 }
-
-export default NavbarComponent;

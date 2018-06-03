@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import * as React from 'react';
-import { StepInfo, SubStep } from '../../models/steps';
+import { StepInfo, SubStep } from 'kiwi/common/models/steps';
 import { Button } from '@blueprintjs/core';
 import { AnswerStep } from './components/answer-step';
 import { ReviewStep } from './components/review-step';
 import { VoteStep } from './components/vote-step';
-import { getQuestionByID } from '../../../api/get-question';
+import { getQuestionByID } from 'kiwi/api/get-question';
 
 export class QuestionStep extends React.Component {
   static propTypes = {

@@ -1,8 +1,8 @@
-import React from "react";
-import NavbarComponent from '../Navbar/navbar';
-import { generateRandomName } from '../../../../utils/randomNameGenerator';
-import { createRoom } from '../../../../api/create-room';
-import { fetchQuestions } from '../../../../api/fetch-questions';
+import * as React from 'react';
+import { NavbarComponent } from 'kiwi/pages/teacher-page/components/Navbar';
+import { generateRandomName } from 'kiwi/utils/randomNameGenerator';
+import { createRoom } from 'kiwi/api/create-room';
+import { fetchQuestions } from 'kiwi/api/fetch-questions';
 import './landing.css';
 
 export class TeacherLandingPage extends React.Component {

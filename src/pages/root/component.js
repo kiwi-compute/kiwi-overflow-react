@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Switch, Route, Redirect } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
-import { TeacherPage } from '../teacher-page/components/Login';
-import { StudentPage } from '../student-page';
-import { TeacherLandingPage } from '../teacher-page/components/Landing';
-import { FindRoom } from '../findroom';
-import { TeacherRoom } from '../teacher-page/components/TeacherRoom';
+import { TeacherPage } from 'kiwi/pages/teacher-page/components/Login';
+import { StudentPage } from 'kiwi/pages/student-page';
+import { TeacherLandingPage } from 'kiwi/pages/teacher-page/components/Landing';
+import { FindRoom } from 'kiwi/pages/findroom';
+import { TeacherRoom } from 'kiwi/pages/teacher-page/components/TeacherRoom';
 
 import '@blueprintjs/core/lib/css/blueprint.css';
 import '@blueprintjs/icons/lib/css/blueprint-icons.css';

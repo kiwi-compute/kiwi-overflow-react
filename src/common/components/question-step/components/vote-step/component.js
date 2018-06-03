@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
 import * as React from 'react';
-import { getAnswersForStep } from '../../../../../api/get-answer';
-import { QuestionPropType } from '../../../../models/question';
+import { getAnswersForStep } from 'kiwi/api/get-answer';
+import { QuestionPropType } from 'kiwi/common/models/question';
 import { Card, Icon, Text } from '@blueprintjs/core';
 import { IconNames } from "@blueprintjs/icons";
-
 
 export class VoteStep extends React.Component {
   static propTypes = {

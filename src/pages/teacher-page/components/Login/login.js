@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { InputGroup, ControlGroup, Button} from '@blueprintjs/core';
-import NavbarComponent from '../Navbar/navbar';
+import { NavbarComponent } from 'kiwi/pages/teacher-page/components/Navbar';
 
 import './login.css';
 
