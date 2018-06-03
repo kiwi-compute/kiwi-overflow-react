@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100%;
+}
+
+.teacher-room-info {
+  margin-top: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between; 
+}
+
+.card {
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center !important;
+}
+
+p {
+  font-size: 4rem;
+}
