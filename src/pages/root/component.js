@@ -5,6 +5,7 @@ import { TeacherPage } from '../teacher-page/components/Login';
 import { StudentPage } from '../student-page';
 import { TeacherLandingPage } from '../teacher-page/components/Landing';
 import { FindRoom } from '../findroom';
+import { TeacherRoom } from '../teacher-page/components/TeacherRoom';
 
 import '@blueprintjs/core/lib/css/blueprint.css';
 import '@blueprintjs/icons/lib/css/blueprint-icons.css';
@@ -20,6 +21,7 @@ export class Root extends React.Component {
             <Route exact path="/findroom" component={FindRoom}/>
             <Route exact path="/teacher" component={TeacherPage} />
             <Route exact path="/teacher/:teacherID" component={TeacherLandingPage} />
+            <Route exact path="/teacher/:teacherID/:roomID" component={TeacherRoom} />
             <Route exact path="/:roomName" component={StudentPage} />
           </Switch>
         </BrowserRouter>
