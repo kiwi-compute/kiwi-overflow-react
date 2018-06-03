@@ -27,7 +27,6 @@ export class TeacherLandingPage extends React.Component {
   state = {
     questions: [],
     selectedId: null,
-    newRoom: null,
   }
   
   componentDidMount() {
@@ -79,7 +78,6 @@ export class TeacherLandingPage extends React.Component {
   }
 
   render() {
-    console.log('state', this.state);
     return (
       <React.Fragment>
         <NavbarComponent authenticated/>
@@ -97,10 +95,16 @@ export class TeacherLandingPage extends React.Component {
             </div>
           </div>
           <div className="teacher-landing-create-room-container">
-           
-                      </div>
-                      <footer className='footer'>
-                      <button className='teacher-landing-create-room-button'>Create Room</button></footer>
+            <button
+              type="button"
+              disabled={!this.state.selectedId || !this.state.timer}
+              className="pt-button pt-intent-success teacher-landing-create-room-button"
+              onClick={() => this._createRoom()}
+            >
+              Create Room
+              <span className="pt-icon-standard pt-icon-arrow-right pt-align-right" />
+            </button>
+          </div>
         </div>
       </React.Fragment>
     );

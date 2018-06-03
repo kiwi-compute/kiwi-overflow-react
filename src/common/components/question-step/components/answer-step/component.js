@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import * as React from 'react';
 import { QuestionPropType } from '../../../../models/question';
 import { Button } from '@blueprintjs/core';
-import './answer.css'
 
 export class AnswerStep extends React.Component {
   static propTypes = {
@@ -17,12 +16,9 @@ export class AnswerStep extends React.Component {
   render() {
     return (
       <div>
-        <h1 className='answerText'>{this.props.question.text}</h1>
-        <h3 className=''stepText>Type your knowns in the area below</h3>
-        <textarea className='textArea'name="answer" value={this.state.answer} onChange={this._handleTextAreaChanged}></textarea>
-        <div className='bottomDiv'>
-        <Button className='submitButton'onClick={this._onSubmit}>Submit</Button>
-        </div>
+        <div>{this.props.question.text}</div>
+        <textarea name="answer" value={this.state.answer} onChange={this._handleTextAreaChanged}></textarea>
+        <Button onClick={this._onSubmit}>Submit</Button>
       </div>
     );
   }
