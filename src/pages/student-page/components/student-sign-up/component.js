@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { generateRandomName } from 'kiwi/utils/randomNameGenerator';
-import './student.css'
-import {Button} from "@blueprintjs/core"
+import { Button, Input } from "@blueprintjs/core"
 export class StudentSignUp extends React.Component {
   state = {
     studentName: generateRandomName(),
@@ -9,13 +8,16 @@ export class StudentSignUp extends React.Component {
 
   render() {
     return (
-      <div className='centerDiv'>
-        <h1 className='studentStart'>Let's Get Started!</h1>
-        <h3 className='studentName'>What would you like to be called?</h3>
-        <input className='studentInput'name="studentName" onChange={this.handleInputChanged} value={this.state.studentName} />
-        <div className='bottomDiv'>
-        <Button type='button' className='studentButton pt-button'onClick={this.submitName}>Submit</Button>
-       </div>
+      <div className="student-page kw-full-height kw-full-width kw-flex kw-flex-column kw-align-items-center kw-justify-content-center">
+        <h1>Let's Get Started!</h1>
+        <h3>What would you like to be called?</h3>
+
+        <div className="kw-flex kw-flex-column kw-align-items-center">
+          <input className="pt-input pt-large" name="studentName" onChange={this.handleInputChanged} value={this.state.studentName} />
+          <div className="kw-mg-y-1">
+            <Button onClick={this.submitName}>Play!</Button>
+          </div>
+        </div>
       </div>
     );
   }
