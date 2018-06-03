@@ -22,6 +22,14 @@
     classnames "^2.2"
     tslib "^1.9.0"
 
+"@blueprintjs/select@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@blueprintjs/select/-/select-2.0.1.tgz#4746aff7ed534113b17d0663bf548b2867dc4b2a"
+  dependencies:
+    "@blueprintjs/core" "^2.3.1"
+    classnames "^2.2"
+    tslib "^1.9.0"
+
 "@firebase/app-types@0.3.2":
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/@firebase/app-types/-/app-types-0.3.2.tgz#a92dc544290e2893bd8c02a81e684dae3d8e7c85"
