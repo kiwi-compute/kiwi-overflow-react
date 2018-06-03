@@ -4,7 +4,7 @@ html {
 
 .header {
   margin-bottom: 20px;
-  color:#654D94;
+  color:#510063;
   font-family: 'Roboto', sans-serif;
   font-size:30px
 }
@@ -12,6 +12,7 @@ html {
 .wrapper {
   display: flex;
   flex-direction: column;
+  background-color: #88CC41;
 }
 
 .content {
