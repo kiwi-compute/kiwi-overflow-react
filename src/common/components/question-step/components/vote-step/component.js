@@ -35,7 +35,7 @@ export class VoteStep extends React.Component {
 
     return (
       <div className="kw-flex kw-flex-column kw-full-width kw-align-items-center">
-        <div className="kw-mg-y-1">Vote on your favorite answer!</div>
+        <div className="kw-mg-y-1">{this.props.isTeacher ? 'Responses' : 'Vote on your favorite answer!'}</div>
         <AnswerList answers={this.state.answers} isVotingMode={true} />
       </div>
     )

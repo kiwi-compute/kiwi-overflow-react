@@ -52,7 +52,7 @@ export class TeacherLandingPage extends React.Component {
       if (i === 0) {
         unit = 'minute';
       }
-      numbers.push(<option key={i}>{`${i + 1} ${unit}`}</option>);
+      numbers.push(<option key={i} value={i + 1}>{`${i + 1} ${unit}`}</option>);
     }
     return <select onChange={(e) => {this._selectTimer(e.target.value)}} className="teacher-landing-select">{numbers}</select>;
   };
@@ -101,8 +101,8 @@ export class TeacherLandingPage extends React.Component {
     const roomObj = {
       name,
       questionID: this.state.selectedId,
-      step: 0,
-      timer: this.state.timer,
+      step: null,
+      timer: Number(this.state.timer),
     }
     createRoom(roomObj).then(() => {
       this.props.history.push(`${this.props.match.params.teacherID}/${name}`)
