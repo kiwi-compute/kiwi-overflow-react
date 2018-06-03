@@ -97,15 +97,15 @@ export class TeacherLandingPage extends React.Component {
   }
 
   _createRoom = () => {
-    const room = generateRandomName().replace(/\s/g, '');
-    const roomObj = {
-      room,
+    const roomName = generateRandomName().replace(/\s/g, '');
+
+    createRoom({
+      name: roomName,
       questionID: this.state.selectedId,
       step: 0,
       timer: this.state.timer,
-    }
-    createRoom(roomObj).then(() => {
-      this.props.history.push(`${this.props.match.params.teacherID}/${room}`)
-    })
+    }).then(() => {
+      this.props.history.push(`/teacher/${this.props.match.params.teacherID}/${roomName}`)
+    });
   }
 }
