@@ -2,24 +2,32 @@ import React from 'react';
 
 import { withRouter } from 'react-router';
 import { Button } from '@blueprintjs/core';
+import { getQuestionByID } from '../../../../api/get-question';
 
 import './styles.css';
 
 class QuestionPageComponent extends React.Component {
+  state ={
+    question: null,
+  }
+
+  componentDidMount() {
+    getQuestionByID(this.props.questionID).then((question) => {
+      this.setState({
+        question: question.text,
+      })
+    })
+
+  }
+
   render() {
     // TODO: Get question number
-    const questionNumber = 1;
-
     return (
       <div className="question-page">
         <div className="container">
-          <h3>Question {questionNumber}</h3>
+          <h3>Question:</h3>
           <p>
-            Bacon ipsum dolor amet chicken boudin leberkas, biltong meatloaf
-            kevin sausage cow buffalo spare ribs jerky filet mignon bresaola.
-            Doner shoulder chicken rump corned beef meatloaf, short loin jowl
-            leberkas pork chop cow chuck pancetta. Shankle buffalo spare ribs
-            pork. Biltong ham hock pork short loin.
+            {this.state.question}
           </p>
         </div>
         <div className="footer">

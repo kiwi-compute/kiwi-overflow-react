@@ -15,8 +15,9 @@ export class QuestionStep extends React.Component {
     questionID: PropTypes.string.isRequired,
     roomID: PropTypes.string.isRequired,
     step: PropTypes.number.isRequired,
-    subStep: PropTypes.number.isRequired,
-    studentID: PropTypes.string.isRequired,
+    subStep: PropTypes.number,
+    studentID: PropTypes.string,
+    isTeacher: PropTypes.boolean,
   }
 
   state = {
@@ -55,6 +56,7 @@ export class QuestionStep extends React.Component {
             roomID={this.props.roomID}
             step={this.props.step}
             studentID={this.props.studentID}
+            isTeacher={this.props.isTeacher}
           />
         );
         break;
