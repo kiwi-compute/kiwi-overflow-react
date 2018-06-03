@@ -41,6 +41,6 @@ export class Timer extends React.Component {
       this.props.onTimerDone();
     }
 
-    return <ProgressBar value={progressPercentage} animate={false} intent={'success'} />;
+    return <ProgressBar value={progressPercentage} animate={false} intent={'success'} animate={true} />;
   }
 }
