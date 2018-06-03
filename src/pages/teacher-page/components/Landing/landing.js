@@ -27,7 +27,6 @@ export class TeacherLandingPage extends React.Component {
   state = {
     questions: [],
     selectedId: null,
-    newRoom: null,
   }
   
   componentDidMount() {
@@ -79,7 +78,6 @@ export class TeacherLandingPage extends React.Component {
   }
 
   render() {
-    console.log('state', this.state);
     return (
       <React.Fragment>
         <NavbarComponent authenticated/>
