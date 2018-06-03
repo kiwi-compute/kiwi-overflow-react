@@ -1,9 +1,36 @@
+body {
+  position: absolute;
+  margin: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#root {
+ margin: 0px;
+ height: 100%;
+ width: 100%;
+}
+
+/* space fillers */
+.full-height { height: 100%; }
+.full-width { width: 100%; }
+
 /* flexbox helpers */
 .flex { display: flex; }
+
+.flex--direction-row { flex-direction: row; }
+.flex--direction-column { flex-direction: column; }
+
 .flex--justify-content-center { justify-content: center; }
 .flex--justify-content-between { justify-content: space-between; }
 .flex--justify-content-around { justify-content: space-around; }
+
 .flex--align-items-center { align-items: center; }
+
+.flex--align-self-start { align-self: flex-start; }
+.flex--align-self-end { align-self: flex-end; }
 
 /* padding helpers */
 .pd-05 { padding: 0.5em; }

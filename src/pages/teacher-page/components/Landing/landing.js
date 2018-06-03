@@ -1,34 +1,16 @@
 import React from "react";
-import {
-  Menu,
-  Alignment,
-  Position,
-  Navbar,
-  NavbarGroup,
-  NavbarHeading,
-  NavbarDivider,
-  Button,
-  MenuItem,
-  MenuDivider,
-  Popover
-} from "@blueprintjs/core";
 import NavbarComponent from '../Navbar/navbar';
-
-import { Select } from "@blueprintjs/select";
 import { generateRandomName } from '../../../../utils/randomNameGenerator';
 import { createRoom } from '../../../../api/create-room';
 import { fetchQuestions } from '../../../../api/fetch-questions';
-
-import { Timer } from '../../../../common/components/timer';
-
-import "./landing.css";
+import './landing.css';
 
 export class TeacherLandingPage extends React.Component {
   state = {
     questions: [],
     selectedId: null,
   }
-  
+
   componentDidMount() {
     fetchQuestions().then((questions) => {
       this.setState({
