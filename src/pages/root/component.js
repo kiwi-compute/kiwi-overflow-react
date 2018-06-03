@@ -13,7 +13,7 @@ import '@blueprintjs/icons/lib/css/blueprint-icons.css';
 export class Root extends React.Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         <BrowserRouter>
           <Switch>
             <Route exact path="/" render={() => <Redirect to="/findroom"/>} />
@@ -24,7 +24,7 @@ export class Root extends React.Component {
             <Route exact path="/:roomName" component={StudentPage} />
           </Switch>
         </BrowserRouter>
-      </div>
+      </React.Fragment>
     );
   }
 }
