@@ -43,21 +43,35 @@ export class TeacherRoom extends React.Component {
       <div className="wrapper">
          <NavbarComponent authenticated />
         {this.state.room ? (
-          <div className="teacher-room-info">
-            <div className="card">
-              <Card elevation={Elevation.TWO}>
-                <h1>URL:</h1>
-                <p>{`/${this.props.match.params.roomName}`}</p>
-              </Card>
+          this.state.step === 0 ? (
+            null
+          ) : this.state.step === 1 ? (
+            null
+          ) : this.state.step === 2 ? (
+            null
+          ) : this.state.step === 3 ? (
+            null
+          ) : this.state.step === 4 ? (
+            null
+          ) : this.state.step === 5 ? (
+            null
+          ) : (
+            <div className="teacher-room-info">
+              <div className="card">
+                <Card elevation={Elevation.TWO}>
+                  <h1>URL:</h1>
+                  <p>{`/${this.props.match.params.roomName}`}</p>
+                </Card>
+              </div>
+              <div className="card">
+                <Card elevation={Elevation.TWO}>
+                  <h1>Number of students:</h1>
+                  <p>{`${this.state.studentCount}`}</p>
+                </Card>
+              </div>
+              <Button onClick={() => transitionStep(0, this.state.room.id)}><h4>Start Game</h4></Button>
             </div>
-            <div className="card">
-              <Card elevation={Elevation.TWO}>
-                <h1>Number of students:</h1>
-                <p>{`${this.state.studentCount}`}</p>
-              </Card>
-            </div>
-            <Button onClick={() => transitionStep(1, this.state.room.id)}>Start Game</Button>
-          </div>
+          )
       ) : (<SVGSpinner />)}
       </div>
     );
