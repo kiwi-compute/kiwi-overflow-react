@@ -44,10 +44,7 @@ export class StudentPage extends React.Component {
     }
 
     return (
-      <React.Fragment>
-        <div>Student Page</div>
-        <div>Name: {room.name}</div>
-
+      <div className="kw-full-height kw-full-width kw-flex kw-flex-column kw-align-items-center kw-justify-content-center">
         <QuestionStep
           onAnswer={this._onAnswer}
           questionID={this.state.room.questionID}
@@ -55,7 +52,7 @@ export class StudentPage extends React.Component {
           step={this.state.room.step}
           studentID={this.state.student.id}
         />
-      </React.Fragment>
+      </div>
     );
   }
 

@@ -6,6 +6,7 @@ import { AnswerStep } from './components/answer-step';
 import { ReviewStep } from './components/review-step';
 import { VoteStep } from './components/vote-step';
 import { getQuestionByID } from 'kiwi/api/get-question';
+import './styles.css';
 
 export class QuestionStep extends React.Component {
   static propTypes = {
@@ -73,11 +74,10 @@ export class QuestionStep extends React.Component {
     }
 
     return (
-      <React.Fragment>
-        <div>{StepInfo[this.props.step].prompt}</div>
-        <Button onClick={this._advanceStep}>Next Step</Button>
-        {stepContent}
-      </React.Fragment>
+      <div className="question-step kw-flex kw-flex-column kw-align-items-center">
+        <h2>{StepInfo[this.props.step].prompt}</h2>
+        <div className="kw-full-width kw-flex kw-flex-column kw-align-items-center">{stepContent}</div>
+      </div>
     )
   }
 

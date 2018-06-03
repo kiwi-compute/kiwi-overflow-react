@@ -15,10 +15,19 @@ export class AnswerStep extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="kw-flex kw-flex-column">
         <div>{this.props.question.text}</div>
-        <textarea name="answer" value={this.state.answer} onChange={this._handleTextAreaChanged}></textarea>
-        <Button onClick={this._onSubmit}>Submit</Button>
+        <div className="kw-mg-y-1">
+          <textarea
+            className="kw-full-width"
+            name="answer"
+            value={this.state.answer}
+            onChange={this._handleTextAreaChanged}
+          />
+        </div>
+        <div className="kw-align-self-end">
+          <Button onClick={this._onSubmit}>Submit</Button>
+        </div>
       </div>
     );
   }

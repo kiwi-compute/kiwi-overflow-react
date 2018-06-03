@@ -35,12 +35,12 @@ export class VoteStep extends React.Component {
     }
 
     return (
-      <Card>
+      <Card className="kw-flex kw-flex-column">
         {this.state.answers.map(({ id, text }, index) => {
           const isLast = this.state.answers.length - 1 === index;
 
           return (
-            <Card className={`flex flex--justify-content-between ${isLast ? '' : 'mg-b-05'}`} key={id}>
+            <Card className={`kw-flex kw-justify-content-between ${isLast ? '' : 'kw-mg-b-05'}`} key={id}>
               <Text>{text}</Text>
               <Icon icon={IconNames.CARET_UP} iconSize={Icon.SIZE_LARGE} />
             </Card>
