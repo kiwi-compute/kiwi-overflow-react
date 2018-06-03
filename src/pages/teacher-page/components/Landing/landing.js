@@ -19,6 +19,8 @@ import { generateRandomName } from '../../../../utils/randomNameGenerator';
 import { createRoom } from '../../../../api/create-room';
 import { fetchQuestions } from '../../../../api/fetch-questions';
 
+import { Timer } from '../../../../common/components/timer';
+
 import "./landing.css";
 
 export class TeacherLandingPage extends React.Component {
