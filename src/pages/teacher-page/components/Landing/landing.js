@@ -15,6 +15,8 @@ import {
 
 import { Select } from "@blueprintjs/select";
 
+import { Timer } from '../../../../common/components/timer';
+
 import "./landing.css";
 
 // TODO: Remove dummy questions

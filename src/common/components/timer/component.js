@@ -1,20 +1,24 @@
-import React from "react";
+import React from 'react';
 
-import "./styles.css";
-import "csshake/dist/csshake.css";
+import './styles.css';
+import 'csshake/dist/csshake.css';
 
 export class Timer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      secondsLeft: this.props.totalTime,
+      secondsLeft: this.props.totalTime
     };
     this.currentInterval = null;
   }
 
   componentDidMount() {
     this.currentInterval = setInterval(() => {
-      this.tick();
+      if (this.state.secondsLeft === 0) {
+        clearInterval(this.currentInterval);
+      } else {
+        this.tick();
+      }
     }, 1000);
   }
 
@@ -29,7 +33,7 @@ export class Timer extends React.Component {
   }
 
   render() {
-    const { secondsLeft, fontColor } = this.state;
+    const { secondsLeft } = this.state;
 
     if (secondsLeft === 0) {
       this.props.onTimerDone();
