@@ -21,6 +21,7 @@
 
 .teacher-landing-select option {
   font-size: 1.1em;
+  font-family:'Roboto', sans-serif;
 }
 
 .teacher-landing-select-container {
@@ -28,7 +29,19 @@
 }
 
 .teacher-landing-create-room-container {
-  position: fixed;
+    position: fixed;
   bottom: 20vh;
   right: 20vw;
+}
+.teacher-landing-create-room-button{
+  background-color:#02DEAE !important;
+  float:right;
+  font-size:17px;
+  margin-top:12px;
+  margin-right:10px
+   
+}
+.footer{background-color:#654D94; 
+  margin-top:48%; 
+  height:50px;
 }

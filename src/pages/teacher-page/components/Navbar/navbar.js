@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { Navbar, NavbarGroup, Alignment, ControlGroup, InputGroup, Button } from '@blueprintjs/core';
+import Avatar from '../Avatar/avatar';
 
 import './navbar.css';
 
-export const NavbarComponent = (props) => {
+const NavbarComponent = (props) => {
   return (
     <Navbar  className='pt-fixed-top navBar'>
       <NavbarGroup align={Alignment.LEFT}>
@@ -11,7 +12,7 @@ export const NavbarComponent = (props) => {
       </NavbarGroup>
       <NavbarGroup align={Alignment.RIGHT}>
         {props.authenticated ? (
-          'User stuff'
+          <Avatar />
         ) : (
           <ControlGroup>
             <InputGroup
@@ -37,3 +38,5 @@ export const NavbarComponent = (props) => {
     </Navbar>
   )
 }
+
+export default NavbarComponent;

@@ -12,6 +12,7 @@ import {
   MenuDivider,
   Popover
 } from "@blueprintjs/core";
+import NavbarComponent from '../Navbar/navbar';
 
 import { Select } from "@blueprintjs/select";
 
@@ -63,29 +64,28 @@ export class TeacherLandingPage extends React.Component {
 
   render() {
     return (
-      <div className="teacher-landing-page">
-        <div className="teacher-landing-content">
-          <div className="teacher-landing-select-container">
-            <div className="pt-select teacher-landing-question-select">
-              {this.generateOptions(DUMMY_QUESTIONS)}
+      <React.Fragment>
+        <NavbarComponent authenticated/>
+        <div className="teacher-landing-page">
+          <div className="teacher-landing-content">
+            <div className="teacher-landing-select-container">
+              <div className="pt-select teacher-landing-question-select">
+                {this.generateOptions(DUMMY_QUESTIONS)}
+              </div>
+            </div>
+            <div className="teacher-landing-select-container">
+              <div className="pt-select teacher-landing-time-select">
+                {this.generateMinutes()}
+              </div>
             </div>
           </div>
-          <div className="teacher-landing-select-container">
-            <div className="pt-select teacher-landing-time-select">
-              {this.generateMinutes()}
-            </div>
-          </div>
+          <div className="teacher-landing-create-room-container">
+           
+                      </div>
+                      <footer className='footer'>
+                      <button className='teacher-landing-create-room-button'>Create Room</button></footer>
         </div>
-        <div className="teacher-landing-create-room-container">
-          <button
-            type="button"
-            className="pt-button pt-intent-success teacher-landing-create-room-button"
-          >
-            Create Room
-            <span className="pt-icon-standard pt-icon-arrow-right pt-align-right" />
-          </button>
-        </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
